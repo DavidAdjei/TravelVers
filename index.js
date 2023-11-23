@@ -30,7 +30,7 @@ passport.use(new localStrategy(User.authenticate()));
 passport.use(new GoogleStrategy({
     clientID:     process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3100/auth/google/callback",
+    callbackURL: "https://travel-vers.cyclic.app/auth/google/callback",
     passReqToCallback   : true
   },
     function (request, accessToken, refreshToken, profile, done) {
