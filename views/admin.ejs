@@ -1,0 +1,329 @@
+<%- include('header'); -%>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="admin__header">
+                    <ul class="nav admin__nav">
+                        <li><button class="btn addCountry">Add Countries</button></li>
+                        <li><button class="btn addCity">Add Cities</button></li>
+                        <li><button class="btn addDeal">Add Deals</button></li>
+                        <li><button class="btn addAdmin">Create Admin</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="reservation-form">
+        <div class="container country hide">
+            <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Add Country</h1>
+                    </div>
+                    <form id="reservation-form" enctype="multipart/form-data" method="POST"  action="/addContent"
+                        style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 3rem;">
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Name:</label>
+                                <input type="text" id="countryName" name="countryName" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Description:</label>
+                                <input type="text" id="countryName" name="desc" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Short Description:</label>
+                                <input type="text" id="countryName" name="desc2" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Population:</label>
+                                <input type="text" id="countryName" name="population" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Country Territory:</label>
+                                <input type="text" id="countryName" name="territory"  required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Average Housing Price:</label>
+                                <input type="text" id="countryName" name="avgPrice" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryImage">Country Image:</label>
+                                <input type="file" id="countryImage" name="image" accept="image/*" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="countryName">Continent:</label>
+                                <input type="text" id="countryName" name="continent" required><br><br>
+                            </fieldset>
+                        </div>
+                        <div class="col-sm-5">
+                            <fieldset>
+                                <label for="cssImage">Background Image:</label>
+                                <input type="file" id="cssImage" name="cssImage" accept="image/*" required><br><br>
+                            </fieldset>
+                        </div>
+                        <button class="col-md-12" type="submit">Add Content</button>
+                    </form>
+            </div>
+        </div>
+        <div class="container city hide">
+                <div class="col-lg-12">
+                    <h1>Add City</h1>
+                </div>
+                <form action="/addCity" method="post" enctype="multipart/form-data" id="reservation-form"
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 1rem;">
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="countryName">Add to which Country</label>
+                            <input type="text" id="countryName" name="country" required><br><br>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="countryName">Name of city</label>
+                            <input type="text" id="countryName" name="cityName" required><br><br>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="image">Image Link</label>
+                            <input type="file" id="image" name="image" accept="image/*" required><br><br>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="countryName">Number of check-ins</label>
+                            <input type="text" id="countryName" name="checkIns" required><br><br>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="countryName">Price of trip</label>
+                            <input type="text" id="countryName" name="price" required><br><br>
+                        </fieldset>
+                    </div>
+                    <div class="col-sm-5">
+                        <fieldset>
+                            <label for="cssImage">Link to second image</label>
+                            <input type="file" id="cssImage" name="cssImage" accept="image/*"required><br><br>
+                        </fieldset>
+                    </div>
+                        <button class="col-sm-5" type="submit">Add Content</button>
+                </form>
+        </div>
+        <div class="container deal hide">
+            <div class="col-lg-12">
+                <h1>Add Deal</h1>
+            </div>
+            <form action="/addDeal" method="post" enctype="multipart/form-data" id="reservation-form"
+                style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 1rem;">
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">City Name</label>
+                        <input type="text" id="countryName" name="cityName" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">Deal Description</label>
+                        <input type="text" id="countryName" name="desc" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="image">Image Link</label>
+                        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">Duration</label>
+                        <input type="text" id="countryName" name="duration" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">Price</label>
+                        <input type="text" id="countryName" name="price" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">Type Of Deal</label>
+                        <input type="text" id="countryName" name="type" required><br><br>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5">
+                    <fieldset>
+                        <label for="countryName">Location</label>
+                        <input type="text" id="countryName" name="location" required><br><br>
+                    </fieldset>
+                </div>
+                    <button class="col-sm-5" type="submit">Add Content</button>
+            </form>
+        </div>
+        <div class="container newAdmin hide">
+            <form id="reservation-form"  method="post" action="/register">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <h4>Add Admin</h4>
+                    </div>
+                    <div class="col-md-12">
+                    <fieldset>
+                        <label for="Name" class="form-label">Username</label>
+                        <input type="text" name="username" class="username" placeholder="username" autocomplete="on" required>
+                    </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                        <fieldset>
+                            <label for="Name" class="form-label">Your Email</label>
+                            <input type="email" name="email" class="email" placeholder="email" autocomplete="on" required>
+                        </fieldset>
+                    </div>
+                
+                    <div class="col-md-12">
+                    <fieldset>
+                        <label for="Name" class="form-label">Your Password</label>
+                        <input type="password" name="password" class="password" placeholder="password" maxlength="12" minlength="8" autocomplete="on" required>
+                    </fieldset>
+                    </div>
+                    <div class="col-lg-12">                        
+                        <fieldset>
+                            <button type="submit" class="main-button">register</button>
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Manage Content</h1>
+        <h2>Countries:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Population</th>
+                    <th scope="col">Continent</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.countries.forEach(function(country) { %>
+                    <tr>
+                        <td><%= country.name %></td>
+                        <td><%= country.population %> Mil</td>
+                        <td><%= country.continent %></td>
+                        <td>
+                            <form action="/deleteCountry" method="post">
+                                <input type="hidden" name="countryId" value="<%= country.id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="/editCountry/country/<%=country.id%>">Edit</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+            
+        </table>
+
+        <h2>Deals:</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">City Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.deals.forEach(function(deal) { %>
+                    <tr>
+                        <td> <%= deal.cityName %></td>
+                        <td><%= deal.type %></td>
+                        <td><%= deal.duration %></td>
+                        <td>
+                            <form action="/deleteDeal" method="post">
+                                <input type="hidden" name="dealId" value="<%= deal.id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                        <td>
+                            <a href="/editDeal/deal/<%=deal.id%>"></a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script>
+        var  country = document.querySelector('.country');
+        var  city = document.querySelector('.city');
+        var addCountry = document.querySelector('.addCountry');
+        var addCity = document.querySelector('.addCity');
+        var deal = document.querySelector('.deal');
+        var addDeal = document.querySelector('.addDeal');
+        var addAdmin = document.querySelector('.addAdmin');
+        var newAdmin = document.querySelector('.newAdmin')
+
+        addCountry.addEventListener('click', function(e) {
+            country.classList.toggle('hide');
+            city.classList.add('hide');
+            deal.classList.add('hide');
+            newAdmin.classList.add('hide');
+        })
+
+        addCity.addEventListener('click', function(e) {
+            city.classList.toggle('hide');
+            country.classList.add('hide');
+            deal.classList.add('hide');
+            newAdmin.classList.add('hide');
+        })
+
+        addDeal.addEventListener('click', function(e) {
+            deal.classList.toggle('hide');
+            country.classList.add('hide');
+            city.classList.add('hide');
+            newAdmin.classList.add('hide');
+        })
+
+        addAdmin.addEventListener('click', function(e) {
+            newAdmin.classList.toggle('hide');
+            country.classList.add('hide');
+            city.classList.add('hide');
+            deal.classList.add('hide');
+        })
+    </script>
+
+<%- include('footer'); -%>
