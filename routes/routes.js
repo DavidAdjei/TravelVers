@@ -7,7 +7,6 @@ const generateRoutes = (app, passport, User, data, fs) => {
     //middlewares
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) {
-            console.log(req.isAuthenticated())
             return next();
         }
         res.redirect("/login");
@@ -43,7 +42,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
     });
     app.use(upload.fields([{ name: 'image', maxCount: 1 }, { name: 'cssImage', maxCount: 1 }]));
 
-    app.get('/', isLoggedIn, function (req, res) {
+    app.get('/', function (req, res) {
         res.render('index', { currentUser: req.user, data: data.countries });
     });
 
