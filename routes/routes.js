@@ -6,7 +6,8 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
     //middlewares
     function isLoggedIn(req, res, next) {
-        if (req.user) {
+        if (req.isAuthenticated()) {
+            console.log(req.isAuthenticated())
             return next();
         }
         res.redirect("/login");
