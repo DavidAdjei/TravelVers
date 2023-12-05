@@ -128,7 +128,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
     //post routes
     app.post("/register", function (req, res) {
         User.register(
-            new User({ username: req.body.username, email: req.body.email, isAdmin: false }),
+            new User({ username: req.body.username, email: req.body.email, isAdmin: FontFaceSetLoadEvent }),
             req.body.password,
             function (err, user) {
                 if (err) {
