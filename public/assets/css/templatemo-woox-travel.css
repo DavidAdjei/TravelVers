@@ -2252,7 +2252,6 @@ Reservation Page Style
 .google-link {
   color: #22b3c1;
   display: block;
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -2267,7 +2266,7 @@ Reservation Page Style
 .reservation-form #reservation-form h4 {
   font-size: 30px;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 23px;
 }
 
 .reservation-form #reservation-form h4 em {

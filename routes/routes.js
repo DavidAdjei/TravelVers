@@ -6,7 +6,7 @@ const generateRoutes = (app, passport, User, data, fs) => {
 
     //middlewares
     function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated()) {
+        if (req.user) {
             return next();
         }
         res.redirect("/login");
@@ -42,16 +42,9 @@ const generateRoutes = (app, passport, User, data, fs) => {
     });
     app.use(upload.fields([{ name: 'image', maxCount: 1 }, { name: 'cssImage', maxCount: 1 }]));
 
-    app.get('/', function (req, res) {
+    app.get('/', isLoggedIn, function (req, res) {
         res.render('index', { currentUser: req.user, data: data.countries });
     });
-
-    app.get('/editCountry/:type/:id', (req, res) => {
-        const type = req.params.type;
-        const id = parseInt(req.params.id);
-        const countryToEdit = data.countries.find(country => country.id === id)
-        res.render('edit', { type: type, currentUser: req.user, country: countryToEdit })
-    })
 
     app.get('/auth/google', passport.authenticate('google', {
         scope: ['email', 'profile']
@@ -94,6 +87,17 @@ const generateRoutes = (app, passport, User, data, fs) => {
     app.get('/reservation', isLoggedIn, function (req, res) {
         res.render('reservation', { currentUser: req.user });
     });
+
+    // app.get('/editCountry/:id', (req, res) => {
+    //     const id = parseInt(req.params.id);
+    //     const countryToEdit = data.countries.find(country => country.id === id)
+    //     res.render('edit', { currentUser: req.user, country: countryToEdit })
+    // })
+
+
+    // app.get('/test/', function (req, res) {
+    //     res.render('test', { currentUser: req.user })
+    // })
 
     app.get("/logout", function (req, res) {
         req.logout(

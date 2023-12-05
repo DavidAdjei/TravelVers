@@ -15,7 +15,7 @@
     </div>
     
 
-    <div class="reservation-form">
+    <div class="reservation-form" style="margin: 1rem 0;">
         <div class="container country hide">
             <div class="row">
                     <div class="col-lg-12">
@@ -221,8 +221,8 @@
         </div>
     </div>
     <div class="content">
-        <h1>Manage Content</h1>
-        <h2>Countries:</h2>
+        <h1 style="text-align: center; margin-bottom: 1rem;">Manage Content</h1>
+        <h4>Countries:</h4>
         <table class="table">
             <thead>
                 <tr>
@@ -230,7 +230,6 @@
                     <th scope="col">Population</th>
                     <th scope="col">Continent</th>
                     <th scope="col">Delete</th>
-                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -245,16 +244,13 @@
                                 <button type="submit">Delete</button>
                             </form>
                         </td>
-                        <td>
-                            <a href="/editCountry/country/<%=country.id%>">Edit</a>
-                        </td>
                     </tr>
                 <% }); %>
             </tbody>
             
         </table>
 
-        <h2>Deals:</h2>
+        <h4 style="margin-block: 2rem 1rem;">Deals:</h4>
         <table class="table">
             <thead>
                 <tr>
@@ -262,7 +258,6 @@
                     <th scope="col">Type</th>
                     <th scope="col">Duration</th>
                     <th scope="col">Delete</th>
-                    <th scope="col">Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -276,9 +271,6 @@
                                 <input type="hidden" name="dealId" value="<%= deal.id %>">
                                 <button type="submit">Delete</button>
                             </form>
-                        </td>
-                        <td>
-                            <a href="/editDeal/deal/<%=deal.id%>"></a>
                         </td>
                     </tr>
                 <% }); %>
